@@ -39,7 +39,7 @@ Spring Boot(JPA + H2)로 만든 **REST API 전용 백엔드**입니다. 사용�
 
 화면(03.frontend)이 이 API를 어떻게 호출하는지는 `03.frontend/README.md`를 참고하세요.
 
-## 컨테이너 이미지 빌드
+## 컨테이너 이미지
 
 ```bash
 ./docker-build.sh   # STUDENT_NUM 환경변수 필요
@@ -60,4 +60,4 @@ kubectl apply -f k8s/service.yaml
 - Service는 `ClusterIP`이므로 클러스터 밖에서는 직접 접근할 수 없습니다. 외부에서 접근하는 진입점(Ingress)은 `03.frontend`에만 있으며, 03.frontend(nginx)가 이 Service(`backend:8080`)로 API 요청을 전달하는 구조입니다.
 - Liveness/Readiness probe는 Actuator의 `/actuator/health/liveness`, `/actuator/health/readiness`를 사용합니다.
   test README.md
-webhook test
+  webhook test
